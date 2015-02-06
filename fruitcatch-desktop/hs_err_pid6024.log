@@ -1,0 +1,172 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000775c573a, pid=6024, tid=4116
+#
+# JRE version: 6.0_18-b07
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (16.0-b13 mixed mode windows-amd64 )
+# Problematic frame:
+# C  [ntdll.dll+0x2573a]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000004b312000):  JavaThread "CompilerThread1" daemon [_thread_in_native, id=4116, stack(0x000000004c2f0000,0x000000004c3f0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xfffffffffffffff8
+
+Registers:
+EAX=0x0000000000001389, EBX=0x0000000000210000, ECX=0x00000000000031bb, EDX=0x0000000000100000
+ESP=0x000000004c3ec460, EBP=0x00000000776b5450, ESI=0x000000005271cfd0, EDI=0x0000000000000000
+EIP=0x00000000775c573a, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x000000004c3ec460)
+0x000000004c3ec460:   0000000000210000 000000005209dc40
+0x000000004c3ec470:   000000005209dc40 00000000775c5b00
+0x000000004c3ec480:   0000000000001804 0000000050e34ce0
+0x000000004c3ec490:   000000005209dc00 0000000000001804
+0x000000004c3ec4a0:   000000001308e7fc 0000000000210158
+0x000000004c3ec4b0:   0000000102000002 00000000000003ff
+0x000000004c3ec4c0:   000000009a001389 00000000523d003e
+0x000000004c3ec4d0:   000000001c001804 000000005209dc40
+0x000000004c3ec4e0:   0000000077000473 00000000002112f0
+0x000000004c3ec4f0:   0000000000000000 000000004b315300
+0x000000004c3ec500:   000000005271cfe0 0000000000000001
+0x000000004c3ec510:   0000000000210000 000000005271cfd0
+0x000000004c3ec520:   000000005271cfd0 00000000775c5b00
+0x000000004c3ec530:   0000000000004544 0000000000000002
+0x000000004c3ec540:   0000000000210001 000000004b314544
+0x000000004c3ec550:   000000005270ef00 000000005209dc40 
+
+Instructions: (pc=0x00000000775c573a)
+0x00000000775c572a:   8b 3c f8 4c 3b d7 74 41 85 d2 0f 84 2f 3e 07 00
+0x00000000775c573a:   8b 47 f8 8b 53 7c 85 d0 0f 84 18 3e 07 00 33 83 
+
+
+Stack: [0x000000004c2f0000,0x000000004c3f0000],  sp=0x000000004c3ec460,  free space=3f10000000000000000k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x2573a]
+
+
+Current CompileTask:
+C2:  2%     javazoom.jl.decoder.LayerIIIDecoder.dequantize_sample([[FII)V @ 148 (1019 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000052762800 JavaThread "LWJGL Timer" daemon [_thread_blocked, id=8156, stack(0x0000000051aa0000,0x0000000051ba0000)]
+  0x000000000021b800 JavaThread "DestroyJavaVM" [_thread_blocked, id=3808, stack(0x0000000002450000,0x0000000002550000)]
+  0x000000004c6a6800 JavaThread "LWJGL Application" [_thread_in_native, id=4248, stack(0x000000004d5a0000,0x000000004d6a0000)]
+  0x000000004b316800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5072, stack(0x000000004c3f0000,0x000000004c4f0000)]
+=>0x000000004b312000 JavaThread "CompilerThread1" daemon [_thread_in_native, id=4116, stack(0x000000004c2f0000,0x000000004c3f0000)]
+  0x000000004b2fc800 JavaThread "CompilerThread0" daemon [_thread_in_native, id=8304, stack(0x000000004c1f0000,0x000000004c2f0000)]
+  0x000000004b2f9800 JavaThread "Attach Listener" daemon [_thread_blocked, id=8620, stack(0x000000004c0f0000,0x000000004c1f0000)]
+  0x000000004b2f9000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4040, stack(0x000000004bff0000,0x000000004c0f0000)]
+  0x000000004b2a6000 JavaThread "Finalizer" daemon [_thread_blocked, id=8724, stack(0x000000004bef0000,0x000000004bff0000)]
+  0x000000004b2a0000 JavaThread "Reference Handler" daemon [_thread_blocked, id=7568, stack(0x000000004bdf0000,0x000000004bef0000)]
+
+Other Threads:
+  0x000000004b29c000 VMThread [stack: 0x000000004bcf0000,0x000000004bdf0000] [id=8644]
+  0x000000004b318000 WatcherThread [stack: 0x000000004c4f0000,0x000000004c5f0000] [id=5188]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 19072K, used 12643K [0x0000000035150000, 0x0000000036690000, 0x000000004a550000)
+  eden space 16384K, 77% used [0x0000000035150000,0x0000000035da8e98,0x0000000036150000)
+  from space 2688K, 0% used [0x00000000363f0000,0x00000000363f0000,0x0000000036690000)
+  to   space 2688K, 0% used [0x0000000036150000,0x0000000036150000,0x00000000363f0000)
+ PSOldGen        total 43520K, used 0K [0x000000000a950000, 0x000000000d3d0000, 0x0000000035150000)
+  object space 43520K, 0% used [0x000000000a950000,0x000000000a950000,0x000000000d3d0000)
+ PSPermGen       total 21248K, used 7525K [0x0000000005550000, 0x0000000006a10000, 0x000000000a950000)
+  object space 21248K, 35% used [0x0000000005550000,0x0000000005ca9510,0x0000000006a10000)
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	C:\Program Files\Java\jre6\bin\javaw.exe
+0x00000000775a0000 - 0x0000000077749000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077380000 - 0x000000007749f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd500000 - 0x000007fefd56b000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefd7d0000 - 0x000007fefd8ab000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd9f0000 - 0x000007fefda8f000 	C:\Windows\system32\msvcrt.dll
+0x000007feff5e0000 - 0x000007feff5ff000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefd8c0000 - 0x000007fefd9ed000 	C:\Windows\system32\RPCRT4.dll
+0x00000000774a0000 - 0x000000007759a000 	C:\Windows\system32\USER32.dll
+0x000007fefef70000 - 0x000007fefefd7000 	C:\Windows\system32\GDI32.dll
+0x000007fefead0000 - 0x000007fefeade000 	C:\Windows\system32\LPK.dll
+0x000007feff7e0000 - 0x000007feff8a9000 	C:\Windows\system32\USP10.dll
+0x000007feff060000 - 0x000007feff08e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefdbd0000 - 0x000007fefdcd9000 	C:\Windows\system32\MSCTF.dll
+0x000000006d7f0000 - 0x000000006de95000 	C:\Program Files\Java\jre6\bin\server\jvm.dll
+0x000007fefa730000 - 0x000007fefa76b000 	C:\Windows\system32\WINMM.dll
+0x000000006d760000 - 0x000000006d76e000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x000000006d3b0000 - 0x000000006d3d7000 	C:\Program Files\Java\jre6\bin\java.dll
+0x000000006d310000 - 0x000000006d31a000 	C:\Program Files\Java\jre6\bin\hpi.dll
+0x0000000077760000 - 0x0000000077767000 	C:\Windows\system32\PSAPI.DLL
+0x000000006d7b0000 - 0x000000006d7c2000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x0000000065580000 - 0x000000006560d000 	C:\Users\Ted\AppData\Local\Temp\libgdxTed\123946040\gdx64.dll
+0x0000000180000000 - 0x0000000180050000 	C:\Users\Ted\AppData\Local\Temp\libgdxTed\27538956\lwjgl64.dll
+0x000007feebba0000 - 0x000007feebcbd000 	C:\Windows\system32\OPENGL32.dll
+0x000007fef52e0000 - 0x000007fef530d000 	C:\Windows\system32\GLU32.dll
+0x000007feeeb50000 - 0x000007feeec41000 	C:\Windows\system32\DDRAW.dll
+0x000007fef68c0000 - 0x000007fef68c8000 	C:\Windows\system32\DCIMAN32.dll
+0x000007fefed90000 - 0x000007fefef67000 	C:\Windows\system32\SETUPAPI.dll
+0x000007fefd420000 - 0x000007fefd456000 	C:\Windows\system32\CFGMGR32.dll
+0x000007feff2c0000 - 0x000007feff397000 	C:\Windows\system32\OLEAUT32.dll
+0x000007feff090000 - 0x000007feff293000 	C:\Windows\system32\ole32.dll
+0x000007fefd400000 - 0x000007fefd41a000 	C:\Windows\system32\DEVOBJ.dll
+0x000007fefc120000 - 0x000007fefc138000 	C:\Windows\system32\dwmapi.dll
+0x000007fefc4b0000 - 0x000007fefc4bc000 	C:\Windows\system32\VERSION.dll
+0x000007fefb880000 - 0x000007fefba74000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefefe0000 - 0x000007feff051000 	C:\Windows\system32\SHLWAPI.dll
+0x000000004b1f0000 - 0x000000004b252000 	C:\Users\Ted\AppData\Local\Temp\libgdxTed\27538956\OpenAL64.dll
+0x000007fefdd40000 - 0x000007fefeac8000 	C:\Windows\system32\SHELL32.dll
+0x000007fefd280000 - 0x000007fefd28f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefb600000 - 0x000007fefb656000 	C:\Windows\system32\uxtheme.dll
+0x000007fefdb30000 - 0x000007fefdbc9000 	C:\Windows\system32\CLBCatQ.DLL
+0x000007fefbfa0000 - 0x000007fefc0cc000 	C:\Windows\System32\PROPSYS.dll
+0x000007fefd5d0000 - 0x000007fefd60a000 	C:\Windows\system32\WINTRUST.dll
+0x000007fefd610000 - 0x000007fefd77c000 	C:\Windows\system32\CRYPT32.dll
+0x000007fefd3f0000 - 0x000007fefd3ff000 	C:\Windows\system32\MSASN1.dll
+0x000007fef19c0000 - 0x000007fef1a48000 	C:\Windows\system32\dsound.dll
+0x000007fefc230000 - 0x000007fefc25c000 	C:\Windows\system32\POWRPROF.dll
+0x000007fefc1e0000 - 0x000007fefc22b000 	C:\Windows\System32\MMDevApi.dll
+0x000007fef6330000 - 0x000007fef637f000 	C:\Windows\system32\AUDIOSES.DLL
+0x0000000069500000 - 0x000000006a330000 	C:\Windows\system32\nvoglv64.DLL
+0x000000004ca10000 - 0x000000004ca75000 	C:\Program Files\WIDCOMM\Bluetooth Software\btmmhook.dll
+0x000007fef0880000 - 0x000007fef091c000 	C:\Windows\system32\mscms.dll
+0x000007fefc6a0000 - 0x000007fefc6be000 	C:\Windows\system32\USERENV.dll
+0x000007fefd350000 - 0x000007fefd35f000 	C:\Windows\system32\profapi.dll
+0x000007fef67c0000 - 0x000007fef6802000 	C:\Windows\system32\icm32.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: com.me.Tutorial.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\altera\13.0sp1\modelsim_ase\win32aloem;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell
+USERNAME=Ted
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 30 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 8 (8 cores per cpu, 2 threads per core) family 6 model 30 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 4175932k(1645580k free), swap 8350000k(5042884k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (16.0-b13) for windows-amd64 JRE (1.6.0_18-b07), built on Dec 17 2009 13:24:11 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Sat Apr 05 23:18:59 2014
+elapsed time: 1 seconds
+
